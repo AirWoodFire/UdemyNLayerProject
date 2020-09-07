@@ -1,0 +1,38 @@
+﻿@model IEnumerable<UdemyNLayerProject.Web.DTOs.CategoryDto>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Kategoriler</h1>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+
+    </thead>
+   
+
+    
+   
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>
+                <a class="btn btn-primary" asp-action="Create">Kategory Ekle</a>
+                <a class="btn badge-info" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+﻿@model System.Collections.Generic.IEnumerable<UdemyNLayerProject.Web.DTOs.CategoryDto>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Kategoriler</h1>
+
+<table class="table table-bordered">
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th></th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Create">Kategory Ekle</a>
+                    <a class="btn badge-info" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
